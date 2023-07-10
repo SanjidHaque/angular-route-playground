@@ -10,21 +10,20 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { OrdersComponent } from './user/orders/orders.component';
 import { StocksComponent } from './admin/stocks/stocks.component';
 import { BillingsComponent } from './admin/billings/billings.component';
+import {AdminRoutingModule} from './admin/admin-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
     UserComponent,
     HomeComponent,
     ProfileComponent,
-    OrdersComponent,
-    StocksComponent,
-    BillingsComponent
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
