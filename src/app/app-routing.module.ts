@@ -8,12 +8,12 @@ import {StocksComponent} from './admin/stocks/stocks.component';
 import {OrdersComponent} from './user/orders/orders.component';
 import {ProfileComponent} from './user/profile/profile.component';
 import {authGuard} from './auth.guard';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'admin', canMatch: [authGuard], loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
-  { path: 'user', component: UserComponent, children: [
+  { path: 'users', component: UserComponent, children: [
       {
         path: '',
         children: [
@@ -21,7 +21,10 @@ const routes: Routes = [
           { path: 'profile', component: ProfileComponent }
         ]
       }
-  ]}
+  ]},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent}
+
 ];
 
 @NgModule({
