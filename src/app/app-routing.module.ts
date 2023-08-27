@@ -11,13 +11,14 @@ import {authGuard} from './auth.guard';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+
+  { path: 'home', component: HomeComponent, title: 'Home' },
   { path: 'admin', canMatch: [authGuard], loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
-  { path: 'users', component: UserComponent, children: [
+  { path: 'users', title: 'Users', component: UserComponent, children: [
       {
         path: '',
         children: [
-          { path: 'orders', component: OrdersComponent },
+          { path: 'orders', title: 'Orders', component: OrdersComponent },
           { path: 'profile', component: ProfileComponent }
         ]
       }
