@@ -10,6 +10,8 @@ export class UserComponent {
   constructor(private router: Router,private route: ActivatedRoute) { }
 
   goToOrders() {
-    this.router.navigate(['orders'], { relativeTo: this.route }); // defining relative route
+    this.router.navigate(['orders'],
+      { relativeTo: this.route, queryParams: { tag: 1, id: 1 }, fragment: 'top' });
+    // defining relative route, query params, fragments
   }
 }
