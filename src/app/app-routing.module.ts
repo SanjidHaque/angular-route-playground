@@ -13,7 +13,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 const routes: Routes = [
 
   { path: 'home', component: HomeComponent, title: 'Home' },
-  { path: 'admin', canMatch: [authGuard], loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
+  { path: 'admin', title: 'Admin', canMatch: [authGuard], loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
   { path: 'users', title: 'Users', component: UserComponent, children: [
       {
         path: '',
