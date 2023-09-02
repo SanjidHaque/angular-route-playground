@@ -14,4 +14,11 @@ export class UserComponent {
       { relativeTo: this.route, queryParams: { tag: 1, id: 1 }, fragment: 'top' });
     // defining relative route, query params, fragments
   }
+
+  goToAnotherOrder() {
+    this.router.navigate(['orders'],
+      { relativeTo: this.route, queryParams: { ticket: 2 }, queryParamsHandling: 'merge', preserveFragment: true });
+    // using queryParamsHandling with merge strategy. default is '', preserve wont change the current params
+    // using preserve fragments too, preserve wont change the current fragments
+  }
 }
