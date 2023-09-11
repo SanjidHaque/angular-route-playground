@@ -17,8 +17,20 @@ export class UserComponent {
 
   goToAnotherOrder() {
     this.router.navigate(['orders'],
-      { relativeTo: this.route, queryParams: { ticket: 2 }, queryParamsHandling: 'merge', preserveFragment: true });
+      {
+        relativeTo: this.route,
+        queryParams: { ticket: 2 },
+        queryParamsHandling: 'merge',
+        preserveFragment: true,
+      });
     // using queryParamsHandling with merge strategy. default is '', preserve wont change the current params
     // using preserve fragments too, preserve wont change the current fragments
+  }
+
+  stayOnUsers() {
+    this.router.navigate(['../users'],
+      {
+        onSameUrlNavigation: 'reload'
+      });
   }
 }
