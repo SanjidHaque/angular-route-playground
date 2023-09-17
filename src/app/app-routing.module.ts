@@ -16,7 +16,7 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          { path: 'orders', title: 'Orders', component: OrdersComponent },
+          { path: ':id/orders', title: 'Orders', component: OrdersComponent },
           { path: 'profile', component: ProfileComponent }
         ]
       }
@@ -27,12 +27,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true, useHash: true })],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false, useHash: false })],
   exports: [RouterModule],
   providers: [provideRouter(routes,
     withRouterConfig({
       onSameUrlNavigation: 'ignore'
     })
-    )]
+  )]
 })
 export class AppRoutingModule { }
