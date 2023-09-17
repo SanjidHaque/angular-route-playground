@@ -11,7 +11,7 @@ export class UserComponent {
   }
 
   goToOrders() {
-    this.router.navigate(['1/orders'],
+    this.router.navigate([1 , 'orders', { optional: 99 }],
       { relativeTo: this.route, queryParams: { tag: 1, token: 1 }, fragment: 'top' });
 
     // We can also pass same query params with different values like { tag: ['bar', 'baz'] }
