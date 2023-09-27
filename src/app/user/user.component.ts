@@ -36,4 +36,12 @@ export class UserComponent {
         onSameUrlNavigation: 'reload'
       });
   }
+
+  onActivate(event: any) {
+    console.log('Router outlet activated event => ', event);
+  }
+
+  onDeactivate(event: any) {
+    console.log('Router outlet deactivated event => ', event);
+  }
 }
