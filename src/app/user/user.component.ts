@@ -36,4 +36,8 @@ export class UserComponent {
         onSameUrlNavigation: 'reload'
       });
   }
+
+  goToOrderFooter() {
+    this.router.navigate(['users/1/orders'], { fragment: 'footer'});
+  }
 }
