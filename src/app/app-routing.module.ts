@@ -54,8 +54,11 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     enableTracing: false,
     useHash: false,
-    onSameUrlNavigation: 'reload',
-    anchorScrolling: 'enabled', scrollOffset: [0, 64] }
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled',
+      onSameUrlNavigation: 'reload',
+      scrollOffset: [0, 50]
+  }
   )],
   exports: [RouterModule],
   providers: [provideRouter(routes,

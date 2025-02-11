@@ -5,7 +5,7 @@ import {delay, of} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn = false;
+  isLoggedIn = true;
 
   redirectUrl: string | null = null;
 

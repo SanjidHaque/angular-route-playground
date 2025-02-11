@@ -23,21 +23,21 @@ export class UserComponent {
       {
         relativeTo: this.route,
         queryParams: { ticket: 2 },
-        queryParamsHandling: 'merge',
-        preserveFragment: true
+        queryParamsHandling: 'replace',
+        preserveFragment: false
       });
     // using queryParamsHandling with merge strategy. default is '', preserve wont change the current params
-    // using preserve fragments too, preserve wont change the current fragments
+    // using preserve fragments too, preserve won't change the current fragments
   }
 
   stayOnUsers() {
     this.router.navigate(['../users'],
       {
-        onSameUrlNavigation: 'reload'
+        onSameUrlNavigation: 'reload',
       });
   }
 
   goToOrderFooter() {
-    this.router.navigate(['users/1/orders'], { fragment: 'footer'});
+    this.router.navigate(['users/1/orders'], { fragment: 'post-footer' });
   }
 }
