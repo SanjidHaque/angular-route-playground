@@ -5,12 +5,12 @@ import {delay, of} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn = true;
+  isLoggedIn = false;
 
   redirectUrl: string | null = null;
 
   login() {
-    return of(true).pipe(
+    return of(false).pipe(
       delay(1000)
     );
   }
