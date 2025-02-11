@@ -5,7 +5,7 @@ import {
   Routes,
   withRouterConfig,
   withComponentInputBinding,
-  UrlSegment
+  UrlSegment, PreloadAllModules
 } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {UserComponent} from './user/user.component';
@@ -29,6 +29,7 @@ const routes: Routes = [
   {
     path: 'users',
     title: 'Users',
+    data: { userName: 'foobar' },
     component: UserComponent,
     children: [
       {
@@ -57,10 +58,11 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     enableTracing: false,
     useHash: false,
-      scrollPositionRestoration: 'enabled',
-      anchorScrolling: 'enabled',
-      onSameUrlNavigation: 'reload',
-      scrollOffset: [0, 50]
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled',
+    onSameUrlNavigation: 'reload',
+    scrollOffset: [0, 50],
+    preloadingStrategy: PreloadAllModules,
   }
   )],
   exports: [RouterModule],

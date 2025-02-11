@@ -10,8 +10,8 @@ export class AuthService {
   redirectUrl: string | null = null;
 
   login() {
-    return of(false).pipe(
-      delay(1000)
+    return of(true).pipe(
+      delay(10)
     );
   }
 

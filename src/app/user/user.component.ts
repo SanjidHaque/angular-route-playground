@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -8,11 +8,20 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class UserComponent implements OnDestroy {
   constructor(private router: Router, private route: ActivatedRoute) {
+    console.log(this.route.snapshot.data);
   }
 
   goToOrders() {
     this.router.navigate([1 , 'orders', { optional: 99 }],
-      { relativeTo: this.route, queryParams: { tag: 1, token: 1 }, fragment: 'top' });
+      { relativeTo: this.route, queryParams: { tag: 1, token: 1 }, fragment: 'footer' });
+
+    // Another way around
+    // const navigationExtras: NavigationExtras = {
+    //   queryParams: { session_id: 1111 },
+    //   fragment: 'footer',
+    //   relativeTo: this.route
+    // };
+    // this.router.navigate([1 , 'orders'], navigationExtras);
 
     // We can also pass same query params with different values like { tag: ['bar', 'baz'] }
     // defining relative route, query params, fragments
