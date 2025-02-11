@@ -14,6 +14,8 @@ import {OrdersComponent} from './user/orders/orders.component';
 import {ProfileComponent} from './user/profile/profile.component';
 import {authGuard} from './auth.guard';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {CustomerSupportChatComponent} from "./customer-support-chat/customer-support-chat.component";
+import {InventorySupportChatComponent} from "./inventory-support-chat/inventory-support-chat.component";
 
 const routes: Routes = [
 
@@ -45,9 +47,10 @@ const routes: Routes = [
         ]
       }
   ]},
+  { path: 'inventory-support', component: InventorySupportChatComponent, outlet: 'chatbox' },
+  { path: 'customer-support', component: CustomerSupportChatComponent, outlet: 'chatbox' },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}
-
 ];
 
 @NgModule({

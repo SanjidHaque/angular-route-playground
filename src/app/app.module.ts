@@ -10,6 +10,8 @@ import { OrdersComponent } from './user/orders/orders.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {TitleStrategy} from '@angular/router';
 import {TemplatePageTitleStrategy} from './template-page-title-strategy';
+import {CustomerSupportChatComponent} from "./customer-support-chat/customer-support-chat.component";
+import {InventorySupportChatComponent} from "./inventory-support-chat/inventory-support-chat.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {TemplatePageTitleStrategy} from './template-page-title-strategy';
     HomeComponent,
     ProfileComponent,
     OrdersComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CustomerSupportChatComponent,
+    InventorySupportChatComponent
   ],
   imports: [
     BrowserModule,

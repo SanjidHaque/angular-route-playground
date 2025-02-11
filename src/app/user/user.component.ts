@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent {
+export class UserComponent implements OnDestroy {
   constructor(private router: Router, private route: ActivatedRoute) {
   }
 
@@ -39,5 +39,17 @@ export class UserComponent {
 
   goToOrderFooter() {
     this.router.navigate(['users/1/orders'], { fragment: 'post-footer' });
+  }
+
+  openInventorySupport() {
+    this.router.navigate([{outlets: { primary: 'users/1/orders', chatbox: 'inventory-support'} }]);
+  }
+
+  closeInventorySupport() {
+    this.router.navigate([{outlets: { primary: 'users/1/orders', chatbox: null} }]);
+  }
+
+  ngOnDestroy() {
+    this.router.navigate([{outlets: { chatbox: null} }]);
   }
 }
