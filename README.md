@@ -1,27 +1,51 @@
-# AngularRoutes
+# Angular Route Playground
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
+This project is an **Angular 18** application created to experiment with **Angular Router** and its various features. It serves as a playground to explore different routing techniques, demonstrate router logic, and understand how routing works in Angular applications.
 
-## Development server
+## Features Covered
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This repository includes examples covering a wide range of routing-related topics, such as:
 
-## Code scaffolding
+- **Basic Routing:** Setting up routes and navigating between components.
+- **Route Parameters:** Passing data through route parameters.
+- **Lazy Loading:** Implementing lazy-loaded modules to optimize performance.
+- **Guards:** Using route guards (AuthGuard, CanActivate, etc.).
+- **Child Routes:** Structuring nested routes effectively.
+- **Query Parameters & Fragments:** Managing additional data in the URL.
+- **Route Reuse & Redirection:** Configuring route reuse strategy and redirection.
+- **Preloading Strategy:** Controlling how modules are loaded.
+- **Error Handling & Fallback Routes:** Managing 404 pages and error scenarios.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Project Setup
 
-## Build
+To get started with the project, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
+- Install [Node.js](https://nodejs.org/) (Recommended: Latest LTS version)
+- Install Angular CLI globally:
+  ```sh
+  npm install -g @angular/cli
+  ```
 
-## Running unit tests
+### Installation
+Clone the repository and install dependencies:
+```sh
+  git clone https://github.com/SanjidHaque/angular-route-playground.git
+  cd angular-route-playground
+  npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Running the Development Server
+Start the Angular development server:
+```sh
+  ng serve
+```
+The application will be available at `http://localhost:4200/`.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contributions
+This project is intended as a personal playground for experimenting with Angular Router. However, if you have suggestions or improvements, feel free to fork the repository and submit a pull request!
 
-## Further help
+---
+🚀 Happy coding with Angular Routing!
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
