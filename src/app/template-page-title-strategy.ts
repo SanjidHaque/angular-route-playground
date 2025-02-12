@@ -7,11 +7,13 @@ export class TemplatePageTitleStrategy extends TitleStrategy {
   constructor(private readonly title: Title) {
     super();
   }
+
   updateTitle(routerState: RouterStateSnapshot): void {
     const title =  this.buildTitle(routerState);
     if (title !== undefined) {
-      this.title.setTitle(`${title}`);
+      this.title.setTitle(`${title} - Angular Router Playground`);
     }
   }
 
 }
+

@@ -11,7 +11,7 @@ export class AuthService {
 
   login() {
     return of(true).pipe(
-      delay(1000)
+      delay(10)
     );
   }
 
